@@ -23,7 +23,7 @@ public class MainClass {
            System.out.println("---------------메뉴선택-----------------");
            System.out.println("1.학생등록 2. 학생상세조회 3.학생목록조회 4.정보수정 5.삭제 0.종료");
            System.out.println("---------------------------------------");
-           System.out.println("숫자입력> ");
+           System.out.print("숫자입력> ");
            int sel = scanner.nextInt();
 
            if(sel == 1){
@@ -39,13 +39,18 @@ public class MainClass {
                     - 입력받은 id에 해당하는 학생 데이터를 리턴받음.
                     - 리턴받은 값을 출력함.
                * */
+               studentService.findById();
            }else if(sel == 3){
                System.out.println("학생목록조회");
-               studentService.findall();
+               studentService.findAll();
            }else if(sel == 4) {
                System.out.println("정보수정");
+               studentService.update();
+               studentService.findAll();
            }else if(sel == 5){
                System.out.println("삭제");
+               studentService.delete();
+               studentService.findAll();
            }else{
                System.out.println("종료");
                run=false;

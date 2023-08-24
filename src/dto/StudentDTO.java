@@ -1,12 +1,18 @@
 package dto;
 
 public class StudentDTO {
-    private long id;
+    private Long id;
     private String studentName;
     private String studentMajor;
     private String studentMobile;
-
+    private static long num = 1L;
     public StudentDTO() {
+    }
+    public StudentDTO(String studentName, String studentMajor, String studentMobile) {
+        this.id = num++;
+        this.studentName = studentName;
+        this.studentMajor = studentMajor;
+        this.studentMobile = studentMobile;
     }
 
     public long getId() {
@@ -41,6 +47,7 @@ public class StudentDTO {
         this.studentMobile = studentMobile;
     }
     // override는 재정의 overloding 은 이름은 같지만 매개변수가 다르면 그대로 쓸 수 있다는 뜻
+
 
     @Override
     public String toString() {
